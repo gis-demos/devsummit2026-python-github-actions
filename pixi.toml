@@ -1,0 +1,15 @@
+[workspace]
+authors = ["Jay Roebuck <jroebuck@esri.com>"]
+channels = ["conda-forge"]
+name = "devsummit2026-python-github-actions"
+platforms = ["win-64", "linux-64", "osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.13.*"
+pip = "*"
+
+[pypi-dependencies]
+arcgis = ">=2.4.2,<2.4.3"
