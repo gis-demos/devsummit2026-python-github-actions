@@ -1,0 +1,33 @@
+name: Set ArcGIS Portal Information Banner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  set-information-banner:
+    runs-on: ubuntu-latest
+    env:
+      ARCGIS_PORTAL_URL: ${{ secrets.ARCGIS_PORTAL_URL }}
+      ARCGIS_PORTAL_USERNAME: ${{ secrets.ARCGIS_PORTAL_USERNAME }}
+      ARCGIS_PORTAL_PASSWORD: ${{ secrets.ARCGIS_PORTAL_PASSWORD }}
+    steps:
+      - name: Configure Python (3.13)
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.13
+      - name: Configure ArcGIS API for Python
+        run: |
+          python -m pip install arcgis==2.4.2.*
+      - name: Configure ArcGIS Connection Profile
+        shell: python
+        run: |
+          from arcgis.gis import GIS
+          import os
+
+          portal_url = os.getenv("ARCGIS_PORTAL_URL")
+          username = os.getenv("ARCGIS_PORTAL_USERNAME")
+          password = os.getenv("ARCGIS_PORTAL_PASSWORD")
+
+          gis = GIS(profile="actions", username=username, password=password, url=portal_url)
+          print(f"Successfully connected to ArcGIS Portal. GIS: {gis}; Saved profile: 'actions'")
+        
