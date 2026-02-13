@@ -22,24 +22,18 @@ jobs:
         uses: prefix-dev/setup-pixi@v0.9.4
         with:
             activate-environment: true
-      - name: Configure ArcGIS Connection Profile
-        shell: pixi run python {0}
-        run: |
-          from arcgis.gis import GIS
-          import os
-
-          portal_url = os.getenv("ARCGIS_PORTAL_URL")
-          username = os.getenv("ARCGIS_PORTAL_USERNAME")
-          password = os.getenv("ARCGIS_PORTAL_PASSWORD")
-
-          gis = GIS(profile="actions", username=username, password=password, url=portal_url)
-          print(f"Successfully connected to ArcGIS Portal. GIS: {gis}; Saved profile: 'actions'")
       - name: Set Information Banner
         shell: pixi run python {0}
         run: |
+            import os
             from pathlib import Path
             from arcgis.gis import GIS
-            gis = GIS(profile="actions")
+
+            portal_url = os.getenv("ARCGIS_PORTAL_URL")
+            username = os.getenv("ARCGIS_PORTAL_USERNAME")
+            password = os.getenv("ARCGIS_PORTAL_PASSWORD")
+
+            gis = GIS(username=username, password=password, url=portal_url)
             if not gis.admin:
                 print("Authenticated user does not have administrative privileges. Exiting.")
                 exit(1)
@@ -48,12 +42,12 @@ jobs:
             if not information_banner_path.is_file():
                 print(f"Information banner file not found at: {information_banner_path.resolve()}. Exiting.")
                 exit(1)
-            
+
             information_banner = information_banner_path.read_text()
             print(f"Setting information banner to: {information_banner}")
             set_banner_success = gis.admin.ux.security_settings.set_informational_banner(information_banner)
-            if set_banner_success:
-                print("Information banner set successfully.")
-            else:
+            if not set_banner_success:
                 print("Failed to set information banner.")
                 exit(1)
+
+            print("Information banner set successfully.")
