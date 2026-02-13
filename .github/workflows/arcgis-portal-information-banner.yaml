@@ -45,7 +45,7 @@ jobs:
 
             information_banner = information_banner_path.read_text()
             print(f"Setting information banner to: {information_banner}")
-            set_banner_success = gis.admin.ux.security_settings.set_informational_banner(information_banner)
+            set_banner_success = gis.admin.ux.security_settings.set_informational_banner(information_banner, enabled=True)
             if not set_banner_success:
                 print("Failed to set information banner.")
                 exit(1)
