@@ -52,7 +52,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b2/a3/e137168c9c44d18eff0376253da9f1e9234d0239e0ee230d2fee6cea8e55/jeepney-0.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/81/db/e655086b7f3a705df045bf0933bdd9c2f79bb3c97bfef1384598bb79a217/keyring-25.7.0-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/4a/0d/9c59313ab43d0858a9a665e80763bd830dc78d5f379afc3815e123c486c2/keyrings.alt-5.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/e9/e9/f218a2cb3a9ffbe324ca29a9e399fa2d2866d7f348ec3a88df87fc248fc5/kiwisolver-1.4.9-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/db/bc/83e112abc66cd466c6b83f99118035867cecd41802f8d044638aa78a106e/locket-1.0.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/d0/34/9e591954939276bb679b73773836c6684c22e56d05980e31d52a9a8deb18/lxml-6.0.2-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl
@@ -129,7 +128,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/8d/48/aa685dbf1024c7bd82bede569e3a85f82c32fd3d79ba5fea578f0159571a/jaraco_context-6.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/81/db/e655086b7f3a705df045bf0933bdd9c2f79bb3c97bfef1384598bb79a217/keyring-25.7.0-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/4a/0d/9c59313ab43d0858a9a665e80763bd830dc78d5f379afc3815e123c486c2/keyrings.alt-5.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2d/7a/9d90a151f558e29c3936b8a47ac770235f436f2120aca41a6d5f3d62ae8d/kiwisolver-1.4.9-cp313-cp313-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/db/bc/83e112abc66cd466c6b83f99118035867cecd41802f8d044638aa78a106e/locket-1.0.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/53/fd/4e8f0540608977aea078bf6d79f128e0e2c2bba8af1acf775c30baa70460/lxml-6.0.2-cp313-cp313-macosx_10_13_universal2.whl
@@ -207,7 +205,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/8d/48/aa685dbf1024c7bd82bede569e3a85f82c32fd3d79ba5fea578f0159571a/jaraco_context-6.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fd/c4/813bb09f0985cb21e959f21f2464169eca882656849adf727ac7bb7e1767/jaraco_functools-4.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/81/db/e655086b7f3a705df045bf0933bdd9c2f79bb3c97bfef1384598bb79a217/keyring-25.7.0-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/4a/0d/9c59313ab43d0858a9a665e80763bd830dc78d5f379afc3815e123c486c2/keyrings.alt-5.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/75/bd/f1a5d894000941739f2ae1b65a32892349423ad49c2e6d0771d0bad3fae4/kiwisolver-1.4.9-cp313-cp313-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/db/bc/83e112abc66cd466c6b83f99118035867cecd41802f8d044638aa78a106e/locket-1.0.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fe/0a/4643ccc6bb8b143e9f9640aa54e38255f9d3b45feb2cbe7ae2ca47e8782e/lxml-6.0.2-cp313-cp313-win_amd64.whl
@@ -982,31 +979,6 @@ packages:
   - types-pywin32 ; extra == 'type'
   - shtab>=1.1.0 ; extra == 'completion'
   requires_python: '>=3.9'
-- pypi: https://files.pythonhosted.org/packages/4a/0d/9c59313ab43d0858a9a665e80763bd830dc78d5f379afc3815e123c486c2/keyrings.alt-5.0.2-py3-none-any.whl
-  name: keyrings-alt
-  version: 5.0.2
-  sha256: 6be74693192f3f37bbb752bfac9b86e6177076b17d2ac12a390f1d6abff8ac7c
-  requires_dist:
-  - jaraco-classes
-  - jaraco-context
-  - sphinx>=3.5 ; extra == 'doc'
-  - jaraco-packaging>=9.3 ; extra == 'doc'
-  - rst-linker>=1.9 ; extra == 'doc'
-  - furo ; extra == 'doc'
-  - sphinx-lint ; extra == 'doc'
-  - jaraco-tidelift>=1.4 ; extra == 'doc'
-  - pytest>=6,!=8.1.* ; extra == 'test'
-  - pytest-checkdocs>=2.4 ; extra == 'test'
-  - pytest-cov ; extra == 'test'
-  - pytest-mypy ; extra == 'test'
-  - pytest-enabler>=2.2 ; extra == 'test'
-  - keyring>=20 ; extra == 'test'
-  - pycryptodomex ; extra == 'test'
-  - pycryptodome ; extra == 'test'
-  - gdata ; python_full_version == '2.7.*' and extra == 'test'
-  - python-keyczar ; python_full_version == '2.7.*' and extra == 'test'
-  - pytest-ruff>=0.2.1 ; sys_platform != 'cygwin' and extra == 'test'
-  requires_python: '>=3.8'
 - pypi: https://files.pythonhosted.org/packages/2d/7a/9d90a151f558e29c3936b8a47ac770235f436f2120aca41a6d5f3d62ae8d/kiwisolver-1.4.9-cp313-cp313-macosx_11_0_arm64.whl
   name: kiwisolver
   version: 1.4.9

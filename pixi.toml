@@ -13,4 +13,3 @@ pip = "*"
 
 [pypi-dependencies]
 arcgis = ">=2.4.2,<2.4.3"
-"keyrings.alt" = "*"
