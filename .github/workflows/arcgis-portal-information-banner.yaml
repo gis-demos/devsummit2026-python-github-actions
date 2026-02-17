@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - informationbanner.txt
+      - PROD/configurations/informationbanner.txt
 
 jobs:
   set-information-banner:
@@ -38,7 +38,7 @@ jobs:
                 print("Authenticated user does not have administrative privileges. Exiting.")
                 exit(1)
 
-            information_banner_path = Path("informationbanner.txt")
+            information_banner_path = Path("PROD/configurations/informationbanner.txt")
             if not information_banner_path.is_file():
                 print(f"Information banner file not found at: {information_banner_path.resolve()}. Exiting.")
                 exit(1)
