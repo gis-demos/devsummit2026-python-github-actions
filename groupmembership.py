@@ -33,7 +33,10 @@ def set_group_membership(portal_url, username, password, group_membership_config
 def _set_group_membership(gis, group_name, members):
     groups = gis.groups.search(query=f"title:{group_name}", max_groups=1)
     if not groups:
-        groups = [gis.groups.create(title=group_name, access="org")]
+        groups = [gis.groups.create(
+            title=group_name, access="org", tags=f"{group_name}, demo", 
+            description=f"Group for {group_name} users", snippet=f"{group_name} group",
+        )]
         print(f"Group '{group_name}' created.")
     
     group = groups[0]
