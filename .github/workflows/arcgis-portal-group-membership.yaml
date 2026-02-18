@@ -1,4 +1,4 @@
-name: Set ArcGIS Portal Information Banner
+name: Set ArcGIS Portal Group Membership
 
 on:
   workflow_dispatch:
@@ -6,10 +6,10 @@ on:
     branches:
       - main
     paths:
-      - PROD/configurations/informationbanner.txt
+      - PROD/configurations/group_membership.json
 
 jobs:
-  set-information-banner:
+  set-group-membership:
     runs-on: ubuntu-latest
     env:
       ARCGIS_PORTAL_URL: ${{ secrets.ARCGIS_PORTAL_URL }}
@@ -22,6 +22,6 @@ jobs:
         uses: prefix-dev/setup-pixi@v0.9.4
         with:
             activate-environment: true
-      - name: Set Information Banner
+      - name: Set Group Membership
         run: |
-          python informationbanner.py
+          python groupmembership.py

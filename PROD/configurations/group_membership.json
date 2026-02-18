@@ -1,0 +1,7 @@
+{
+    "groups": {
+        "Analysts": {
+            "members": ["analysta", "analystb"]
+        }
+    }
+}
