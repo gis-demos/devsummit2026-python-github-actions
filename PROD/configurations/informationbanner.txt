@@ -1,1 +1,1 @@
-OPERATING STATUS:  OPEN
+Content promotion from STAGING to PRODUCTION will occur during scheduled system maintenance on Friday, March 13 2026 from 17:00 to 20:00 UTC
