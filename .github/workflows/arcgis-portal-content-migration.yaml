@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - PROD/migrations/*.epk
+      - migratecontent.py
 
 jobs:
   migrate-content:
