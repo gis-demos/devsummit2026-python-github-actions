@@ -17,11 +17,11 @@ def update_security_settings(portal_url, username, password, security_settings):
     # Apply Changes if different
     if current_security_settings.anonymous_access != security_settings['anonymous_access']:
         current_security_settings.anonymous_access = security_settings['anonymous_access']
-    if current_security_settings.enable_https != security_settings['enable_https']:
+    if str(current_security_settings.enable_https) != security_settings['enable_https']:
         current_security_settings.enable_https = security_settings['enable_https']
-    if current_security_settings.show_social_media != security_settings['show_social_media']:
+    if str(current_security_settings.show_social_media) != security_settings['show_social_media']:
         current_security_settings.show_social_media = security_settings['show_social_media']
-    if disabled_creation_builtin_accounts != security_settings['disableSignup']:
+    if str(disabled_creation_builtin_accounts) != security_settings['disableSignup']:
         system_properties['disableSignup'] = security_settings['disableSignup']
         gis.admin.system.properties = system_properties
         
