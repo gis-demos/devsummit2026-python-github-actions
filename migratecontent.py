@@ -1,7 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from arcgis.gis import GIS
+from arcgis.gis import GIS, ItemProperties
 
 def migrate_content(portal_url, username, password, migrations_directory):
     gis = GIS(username=username, password=password, url=portal_url)
@@ -22,15 +22,17 @@ def migrate_content(portal_url, username, password, migrations_directory):
             continue
         print(f"Importing content from {epk_file.name}...")
         root_folder = gis.content.folders.get("/")
-        epk_item = root_folder.add(
-            item_properties={
-                "title": title, 
-                "snippet": f"Content migrated from {epk_file.name}",
-                "tags": "migration, epk",
-                "type": "Export Package"
-            },
+        add_job = root_folder.add(
+            item_properties=ItemProperties(
+                title: title, 
+                snippet: f"Content migrated from {epk_file.name}",
+                tags: ["migration, epk"],
+                type: "Export Package"
+            ),
             file=str(epk_file.resolve())
         )
+        if add_job.done():
+            epk_item = add_job.result()
         print(epk_item)
 
         group_name = f"{epk_file.stem}_group"
