@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - main
-      - rwmajor2/updates
     paths:
       - PROD/configurations/enterprise_prod_security_settings.json
 
