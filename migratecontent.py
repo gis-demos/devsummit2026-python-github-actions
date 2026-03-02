@@ -24,10 +24,10 @@ def migrate_content(portal_url, username, password, migrations_directory):
         root_folder = gis.content.folders.get("/")
         add_job = root_folder.add(
             item_properties=ItemProperties(
-                title: title, 
-                snippet: f"Content migrated from {epk_file.name}",
-                tags: ["migration, epk"],
-                type: "Export Package"
+                title=title, 
+                snippet=f"Content migrated from {epk_file.name}",
+                tags=["migration, epk"],
+                type="Export Package"
             ),
             file=str(epk_file.resolve())
         )
