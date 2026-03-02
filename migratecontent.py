@@ -27,7 +27,7 @@ def migrate_content(portal_url, username, password, migrations_directory):
                 title=title, 
                 snippet=f"Content migrated from {epk_file.name}",
                 tags=["migration, epk"],
-                type="Export Package"
+                item_type="Export Package"
             ),
             file=str(epk_file.resolve())
         )
