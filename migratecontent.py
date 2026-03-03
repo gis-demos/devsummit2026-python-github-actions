@@ -36,7 +36,7 @@ def migrate_content(portal_url, username, password, migrations_directory):
         print(epk_item)
 
         group_name = f"{epk_file.stem}_group"
-        found_group = gis.groups.search(query=f"title:{group_name}", max_groups=1)[0]
+        found_group = gis.groups.search(query=f"title:{group_name}", max_groups=1)
         if not found_group:
             group = gis.groups.create(
                 title=group_name, access="org", tags=f"{group_name}, migration", 
