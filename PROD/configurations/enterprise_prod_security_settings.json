@@ -1,6 +1,6 @@
 {
   "anonymous_access": "public",
   "enable_https": true,
-  "show_social_media": false,
+  "show_social_media": true,
   "disableSignup": true
 }
