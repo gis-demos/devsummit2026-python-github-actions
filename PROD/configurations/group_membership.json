@@ -1,1 +1,7 @@
-{}
+{
+    "groups": {
+        "Parks Analyst Group": {
+            "members": ["jsmith", "djohnson", "mkeller"]
+        }
+    }
+}
