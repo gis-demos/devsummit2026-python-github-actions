@@ -1,5 +1,5 @@
 {
-  "anonymous_access": "public",
+  "anonymous_access": "private",
   "enable_https": true,
   "show_social_media": false,
   "disableSignup": true
