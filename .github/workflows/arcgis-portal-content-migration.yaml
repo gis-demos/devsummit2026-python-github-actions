@@ -1,4 +1,4 @@
-name: Set ArcGIS Portal Organization Security Settings
+name: Publish Content Migration Export Group Content Files
 
 on:
   workflow_dispatch:
