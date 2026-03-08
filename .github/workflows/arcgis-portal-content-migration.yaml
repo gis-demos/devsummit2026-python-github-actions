@@ -1,4 +1,4 @@
-name: Publish Content Migration Export Group Content Files
+name: Automate PR Change - Publish Content Migration Export Group Content Files
 
 on:
   workflow_dispatch:
