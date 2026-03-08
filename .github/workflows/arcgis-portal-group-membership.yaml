@@ -1,4 +1,4 @@
-name: Set ArcGIS Portal Group Membership
+name: Automate PR Change - Set ArcGIS Portal Group Membership
 
 on:
   workflow_dispatch:
