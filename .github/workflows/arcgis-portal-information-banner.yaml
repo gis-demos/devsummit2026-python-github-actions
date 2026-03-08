@@ -1,4 +1,4 @@
-name: Set ArcGIS Portal Information Banner
+name: Automate PR Change - Set ArcGIS Portal Information Banner
 
 on:
   workflow_dispatch:
