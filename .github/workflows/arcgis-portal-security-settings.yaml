@@ -1,4 +1,4 @@
-name: Set ArcGIS Portal Organization Security Settings
+name: Automate PR Change - Set ArcGIS Portal Organization Security Settings
 
 on:
   workflow_dispatch:
